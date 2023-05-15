@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrevoirCar.Server.Data;
 
 namespace TrevoirCar.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230515185715_SeedAddRole2")]
+    partial class SeedAddRole2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -147,22 +149,6 @@ namespace TrevoirCar.Server.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "990f4071-6b78-476f-bef2-c7665515e6f5",
-                            ConcurrencyStamp = "a0a6f33a-f37e-4dc8-b923-f9bc878eb413",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        },
-                        new
-                        {
-                            Id = "990f4071-6b78-476f-bef2-c7665515e6f4",
-                            ConcurrencyStamp = "b91749ac-0ae5-4ed6-8666-220d5b465153",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -250,13 +236,6 @@ namespace TrevoirCar.Server.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "5a6df2c4-69ac-4b7a-af58-951a1e46b21d",
-                            RoleId = "990f4071-6b78-476f-bef2-c7665515e6f4"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -349,26 +328,6 @@ namespace TrevoirCar.Server.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "5a6df2c4-69ac-4b7a-af58-951a1e46b21d",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "1a325b67-2c21-4133-96ec-d432e016b7e7",
-                            Email = "admin@localhost.com",
-                            EmailConfirmed = false,
-                            FirstName = "Admin",
-                            LastName = "User",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAENxOkKNpVkkZhJyUqX/11qhcs94hka3ODXSUgfdBw3QZ74c+/MUvwSKGcX4kl1FReg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "fc71eef5-94b2-4f2c-bf72-6f6905b06871",
-                            TwoFactorEnabled = false,
-                            UserName = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("TrevoirCar.Shared.Domain.Booking", b =>
@@ -442,8 +401,8 @@ namespace TrevoirCar.Server.Data.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2023, 5, 15, 15, 33, 40, 120, DateTimeKind.Local).AddTicks(4080),
-                            DateUpdated = new DateTime(2023, 5, 15, 15, 33, 40, 123, DateTimeKind.Local).AddTicks(2127),
+                            DateCreated = new DateTime(2023, 5, 15, 13, 57, 15, 364, DateTimeKind.Local).AddTicks(5467),
+                            DateUpdated = new DateTime(2023, 5, 15, 13, 57, 15, 368, DateTimeKind.Local).AddTicks(903),
                             Name = "Black",
                             UpdatedBy = "System"
                         },
@@ -451,8 +410,8 @@ namespace TrevoirCar.Server.Data.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2023, 5, 15, 15, 33, 40, 123, DateTimeKind.Local).AddTicks(3621),
-                            DateUpdated = new DateTime(2023, 5, 15, 15, 33, 40, 123, DateTimeKind.Local).AddTicks(3637),
+                            DateCreated = new DateTime(2023, 5, 15, 13, 57, 15, 368, DateTimeKind.Local).AddTicks(2045),
+                            DateUpdated = new DateTime(2023, 5, 15, 13, 57, 15, 368, DateTimeKind.Local).AddTicks(2060),
                             Name = "Blue",
                             UpdatedBy = "System"
                         });
@@ -525,8 +484,8 @@ namespace TrevoirCar.Server.Data.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2023, 5, 15, 15, 33, 40, 124, DateTimeKind.Local).AddTicks(7440),
-                            DateUpdated = new DateTime(2023, 5, 15, 15, 33, 40, 124, DateTimeKind.Local).AddTicks(7460),
+                            DateCreated = new DateTime(2023, 5, 15, 13, 57, 15, 369, DateTimeKind.Local).AddTicks(6249),
+                            DateUpdated = new DateTime(2023, 5, 15, 13, 57, 15, 369, DateTimeKind.Local).AddTicks(6287),
                             Name = "BMW",
                             UpdatedBy = "System"
                         },
@@ -534,8 +493,8 @@ namespace TrevoirCar.Server.Data.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2023, 5, 15, 15, 33, 40, 124, DateTimeKind.Local).AddTicks(7844),
-                            DateUpdated = new DateTime(2023, 5, 15, 15, 33, 40, 124, DateTimeKind.Local).AddTicks(7855),
+                            DateCreated = new DateTime(2023, 5, 15, 13, 57, 15, 369, DateTimeKind.Local).AddTicks(6651),
+                            DateUpdated = new DateTime(2023, 5, 15, 13, 57, 15, 369, DateTimeKind.Local).AddTicks(6662),
                             Name = "Toyota",
                             UpdatedBy = "System"
                         });
@@ -572,8 +531,8 @@ namespace TrevoirCar.Server.Data.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2023, 5, 15, 15, 33, 40, 125, DateTimeKind.Local).AddTicks(944),
-                            DateUpdated = new DateTime(2023, 5, 15, 15, 33, 40, 125, DateTimeKind.Local).AddTicks(961),
+                            DateCreated = new DateTime(2023, 5, 15, 13, 57, 15, 369, DateTimeKind.Local).AddTicks(9684),
+                            DateUpdated = new DateTime(2023, 5, 15, 13, 57, 15, 369, DateTimeKind.Local).AddTicks(9700),
                             Name = "Prius",
                             UpdatedBy = "System"
                         },
@@ -581,8 +540,8 @@ namespace TrevoirCar.Server.Data.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2023, 5, 15, 15, 33, 40, 125, DateTimeKind.Local).AddTicks(1329),
-                            DateUpdated = new DateTime(2023, 5, 15, 15, 33, 40, 125, DateTimeKind.Local).AddTicks(1339),
+                            DateCreated = new DateTime(2023, 5, 15, 13, 57, 15, 370, DateTimeKind.Local).AddTicks(57),
+                            DateUpdated = new DateTime(2023, 5, 15, 13, 57, 15, 370, DateTimeKind.Local).AddTicks(67),
                             Name = "3 Series",
                             UpdatedBy = "System"
                         });
